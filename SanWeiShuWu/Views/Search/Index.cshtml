@@ -1,0 +1,109 @@
+﻿@model IEnumerable<Book>
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/css/b.css" rel="stylesheet" />
+    <style>
+        /** {
+            margin: auto;
+            padding: 0;
+        }*/
+
+        /*.form {
+            width: 434px;
+            height: 42px;
+            background: rgba(0,0,0,.2);
+            padding: -2px;
+            border: none;
+            border-radius: 5px;
+        }*/
+
+        input {
+            width: 542px;
+            height: 42px;
+            background-color: #eeeeee;
+            border: none;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            font: bold 15px 'lucida sans', 'trebuchet MS', 'Tahoma';
+            font-style: italic;
+        }
+
+        button {
+            /*display:inline-block;*/
+            width: 112px;
+            height: 42px;
+            background-color: #d93c3c;
+            color: #fff;
+            border: none;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            position: relative;
+            font-size: 16px;
+            font-weight: bold;
+        }
+            /*使用伪类来添加三角符号*/
+            button:before {
+                content: "";
+                border-width: 0px;
+                border-style: solid;
+                border-color: transparent #d93c3c transparent transparent;
+                position: absolute;
+                right: 100%;
+                top: 38%;
+            }
+    </style>
+</head>
+<body>
+
+
+    <form asp-action="Index" asp-controller="Search" method="POST" data-ajax="true" data-ajax-mode="replace" data-ajax-update="#divEmp">
+
+
+        <div class="container u-flexWrap master">
+            <main>
+                <div>
+                    <h1 id="btnSearch">搜索</h1>
+
+                    <div class="form">
+                        <input type="search" name="title" id="title" placeholder="你在找什么书？">
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <div id="divEmp" class="block block-books block-books-grid">
+
+
+            @await Html.PartialAsync("_commentpost")
+
+        </div>
+    </form>
+</body>
+</html>
+<script src="~/js/jquery-3.2.1.min.js"></script>
+<script src="~/js/jquery.lazyload.js"></script>
+<script src="~/js/jquery.scrollstop.js"></script>
+<script src="~/js/jquery.unobtrusive-ajax.min.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function ($) {
+        $('img.lazy').lazyload();
+        
+    });
+
+    $("#btnSearch").click(function () {
+
+        $.post('/Search/Index', { title: $("#title").val() }, function (data) {
+            console.log(data);
+           
+        });
+    });
+
+</script>
+

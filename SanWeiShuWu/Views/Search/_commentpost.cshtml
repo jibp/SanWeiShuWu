@@ -1,0 +1,49 @@
+﻿
+
+
+
+
+
+    <ul class="block-items">
+
+        @foreach (var item in Model)
+        {
+            <li class="block-item">
+                <div class="book-img">
+                    <a href="@Url.Action("Detail", "Literature", new { Id = item.Id })" title="@item.Title">
+                        <img class="lazy" src="~/images/grey.gif" data-original="/Upload/@item.CoverId" alt="@item.Title">
+                    </a>
+                </div>
+                <div class="book-info">
+                    <h4 class="name"><a href="@Url.Action("Detail", "Literature", new { Id = item.Id })" title="@item.Title">@item.Title</a></h4>
+                    <div class="author">
+                        <span>
+                            作者：@item.Author                   &nbsp;
+                        </span>
+                        <span>
+                            @item.Intro
+                        </span>
+                    </div>
+                </div>
+
+            </li>
+
+        }
+
+    </ul>
+   
+
+
+
+<script src="~/js/jquery-3.2.1.min.js"></script>
+<script src="~/js/jquery.lazyload.js"></script>
+<script src="~/js/jquery.scrollstop.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function ($) {
+        $("img").lazyload({
+            effect: "fadeIn"
+
+        });
+    });
+
+</script>

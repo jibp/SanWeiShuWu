@@ -1,0 +1,87 @@
+﻿
+
+@model IEnumerable<Book>
+
+
+    <head>
+       
+        <link href="~/css/b.css" rel="stylesheet" />
+
+        <style>
+
+
+            input {
+                width: 542px;
+                height: 42px;
+                background-color: #eeeeee;
+                border: none;
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
+                font: bold 15px 'lucida sans', 'trebuchet MS', 'Tahoma';
+                font-style: italic;
+            }
+
+            button {
+                /*display:inline-block;*/
+                width: 112px;
+                height: 42px;
+                background-color: #d93c3c;
+                color: #fff;
+                border: none;
+                border-top-right-radius: 5px;
+                border-bottom-right-radius: 5px;
+                position: relative;
+                font-size: 16px;
+                font-weight: bold;
+            }
+                /*使用伪类来添加三角符号*/
+                button:before {
+                    content: "";
+                    border-width: 0px;
+                    border-style: solid;
+                    border-color: transparent #d93c3c transparent transparent;
+                    position: absolute;
+                    right: 100%;
+                    top: 38%;
+                }
+        </style>
+
+    </head>
+
+
+        <form class="layui-form" asp-action="Index" data-ajax-success="onSuccess" data-ajax="true" data-ajax-method="POST">
+            <div class="form">
+                <input type="text" name="title" id="title" placeholder="Search here...">
+                <button>SEARCH</button>
+            </div>
+        </form>
+
+
+
+        <div id="comments" class="block block-books block-books-grid">
+
+            @Html.Partial("_commentpost", Model)
+
+        </div>
+
+
+
+
+<script src="~/js/jquery-3.2.1.min.js"></script>
+<script src="~/js/jquery.lazyload.js"></script>
+<script src="~/js/jquery.scrollstop.js"></script>
+<script src="~/js/jquery.unobtrusive-ajax.min.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function ($) {
+
+        $('img.lazy').lazyload();
+     
+    });
+
+</script>
+
+
+
+
+
+

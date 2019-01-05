@@ -1,0 +1,120 @@
+﻿
+@model SanWeiShuWu.Models.Book
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title></title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+</head>
+<body style="text-align:center;">
+    <div class="layout-head">
+        <div>
+            <div id="navbar-toggles" class="navbar-toggles">
+                <a href="#nav-main" class="toggle-main ryi-nav-sandwich"></a>
+            </div>
+            <a id="head-navbar-toggle" href="#" class="head-navbar-toggle"></a>
+            <div class="head-logo"><a href="/"><br /></a></div>
+
+        </div>
+    </div>
+
+
+
+
+    <div>
+        <div>
+            <div>
+                <div class="page-book-head">
+                    <div class="row g-20">
+                        <div class="col-md-4">
+                            <div class="book-img">
+                                <a href="#">
+                                    <img class="lazy" width="230" height="310" data-original="/Upload/@Model.CoverId" alt="@Model.Title">
+
+                                </a>
+
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="book-head-upper" style="text-align:left;">
+                                <div class="book-series">程序设计丛书</div>
+                                <div class="book-title">
+                                    <h2>
+                                        @Model.Title
+                                    </h2>
+                                    <div></div>
+                                    <div><a></a></div>
+                                </div>
+                                <div class="book-author">
+                                    <span>
+                                        @Model.Author                                    (作者)
+                                    </span><br />
+                                    <span>出版社：@Model.cbs</span><br />
+                                    <span>出版年：@Model.cbn</span><br />
+                                    <span>版&nbsp;&nbsp;本：@Model.bben</span><br />
+                                    <span>页&nbsp;&nbsp;数：@Model.page</span><br />
+                                </div>
+
+
+                                <div class="alert alert-warning">
+                                    【内容摘要】</br>
+                                    @Model.Intro
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div>
+                <div id="book-errata"></div>
+
+
+                <div class="block">
+                    <div style="text-align:left;">
+                        <h3>本书特色</h3>
+                    </div>
+                    <div class="block-body">
+
+                        <iframe src="~/js/pdfjs/web/viewer.html?file=@ViewBag.FileAddress" width="98%"
+                                height="800" frameBorder="0"></iframe>
+
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
+<script src="~/js/jquery-3.2.1.min.js"></script>
+<script src="~/js/jquery.lazyload.js"></script>
+<script src="~/js/jquery.scrollstop.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function ($) {
+        $("img").lazyload({
+            effect: "fadeIn"
+
+        });
+    });
+
+</script>
+
+

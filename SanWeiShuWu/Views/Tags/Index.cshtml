@@ -1,0 +1,46 @@
+﻿
+@model IEnumerable<SanWeiShuWu.Models.Tags>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Content/b.css" rel="stylesheet" />
+    <style>
+
+        .p-tags .tags {
+            position: relative;
+            margin-left: -15px;
+            margin-right: -15px;
+        }
+
+        .p-tags .tag-item {
+            float: left;
+            padding-left: 15px;
+            padding-right: 15px;
+            margin-bottom: 15px;
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <span>所有标签</span>
+    <div class="container" >
+
+        <div class="p-tags">
+
+            <div class="tags clearfix">
+                @foreach (var item in Model)
+                {
+                    <div class="tag-item" style="width:280px; font-weight:bold; color:#716ACA;">
+                        <a href="@Url.Action("Index","Literature",new { tag=item.TagType})" class="">@item.TagName</a><span></span>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
