@@ -49,8 +49,8 @@
     </head>
 
 
-        <form class="layui-form" asp-action="Index" data-ajax-success="onSuccess" data-ajax="true" data-ajax-method="POST">
-            <div class="form">
+        <form class="layui-form" asp-action="Index" asp-controller="Search" data-ajax-success="onSuccess" data-ajax="true" data-ajax-method="POST" data-ajax-update="#divEmp">
+            <div class="form" style="margin-top:10px;">
                 <input type="text" name="title" id="title" placeholder="Search here...">
                 <button>SEARCH</button>
             </div>
@@ -58,7 +58,7 @@
 
 
 
-        <div id="comments" class="block block-books block-books-grid">
+        <div id="divEmp" class="block block-books block-books-grid">
 
             @Html.Partial("_commentpost", Model)
 

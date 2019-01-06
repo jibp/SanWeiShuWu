@@ -16,7 +16,7 @@ namespace SanWeiShuWu.Common
         /// <summary>
         /// 连接字符串
         /// </summary>
-        private static readonly string ConnectionString = "192.168.38.130:6379,password=jbp815224,connecttimeout=15000,synctimeout=15000";
+        private static readonly string ConnectionString = "192.168.38.141:6379,password=jbp815224,connecttimeout=15000,synctimeout=15000";
 
         //ConfigurationManager.ConnectionStrings["RedisExchangeHostsWrite"].ConnectionString;
         /// <summary>
