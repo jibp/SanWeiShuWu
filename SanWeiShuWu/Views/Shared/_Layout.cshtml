@@ -27,12 +27,12 @@
                         @Html.ActionLink("狐狸书苑 Mark.Ji", "Index", "Tags", new { area = "" }, new { @class = "navbar-brand" })
                     </td>
                     <td style=" width:10% ;font-size:5px; padding-top:5px; ">
-                        <a href="@Url.Action("Index","Tags")">所有标签</a>
+                        <a href="@Url.Action("Index", "Tags")">所有标签</a>
 
                     </td>
                     <td style="width:98%; text-align:right;">
 
-                        <a href="@Url.Action("Index","Search")"><img width="32" height="32" src="~/images/search.png" /></a>
+                        <a href="@Url.Action("Index", "Search")"><img width="32" height="32" src="~/images/search.png" /></a>
 
                     </td>
                 </tr>
@@ -47,7 +47,7 @@
         <hr />
         <footer>
             <div style="text-align:center;">
-                &copy;2018&nbsp;&nbsp;
+                &copy;@DateTime.Now.ToString("yyyy")&nbsp;&nbsp;
                 <a href="http://www.miitbeian.gov.cn ">苏ICP备18000465号-1</a>
                 <a class="c-icon-jgwablogo">&nbsp;&nbsp;&nbsp;&nbsp;<img src="~/images/ghs.png" /> 京公网安备32050602010377号</a>
             </div>

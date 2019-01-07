@@ -10,9 +10,4 @@
     <PackageReference Include="StackExchange.Redis" Version="2.0.519" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="wwwroot\File\Net\" />
-    <Folder Include="wwwroot\File\Python\" />
-  </ItemGroup>
-
 </Project>
