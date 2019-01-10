@@ -27,7 +27,7 @@ namespace SanWeiShuWu
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ConnectionContext>(options =>
-             options.UseSqlServer("Data Source=192.168.31.58,1433;Initial Catalog=Literature;User ID=sa;Password=zhuzhuaini112618"));
+             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.Configure<CookiePolicyOptions>(options =>
             {
